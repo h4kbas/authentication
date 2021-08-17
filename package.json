@@ -6,9 +6,11 @@
   "author": "Hüseyin Akbaş <h4kbas@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7"
   },
   "devDependencies": {
-    "@types/express": "^4.17.13"
+    "@types/express": "^4.17.13",
+    "@types/mongoose": "^5.11.97"
   }
 }

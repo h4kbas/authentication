@@ -1,26 +1,26 @@
-import express from "express";
-import mongoose from "mongoose";
 
-const app = express();
-const port = 80
+import App from "./app";
+import config from "./config";
 
+import RootC from "./controllers/root";
+
+import SessionM from "./middlewares/session";
 async function main() {
+  const authapp = new App();
 
-  // Connecting to mongo named docker container including mongodb
-  await mongoose.connect('mongodb://mongo:27017/auth', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+  await authapp.initializeDatabase("auth");
+  authapp.initializeSession();
+  authapp.initializeTemplate();
+
+  authapp.registerController('/', RootC);
+
+  authapp.registerMiddleware(SessionM);
+  //authapp.registerMiddleware();
+
+  authapp.listen(config.app.port, () => {
+    console.log(`Auth at http://localhost:${config.app.port}`)
   });
-
-
-  app.get('/', (req, res) => {
-    res.send('Hello World!')
-  })
-
-  app.listen(port, () => {
-    console.log(`Auth at http://localhost:${port}`)
-  })
-
 }
 
 main();
+

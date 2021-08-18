@@ -1,6 +1,16 @@
 Welcome to <span>Authentication Web App<span>. Here you can login or signup by clicking the following links.
 <br>
 <br>
+
+{% if profile %}
+<a href="/home">Home</a>
+<br>
+<a href="/logout">Logout</a>
+<br>
+{% else %}
+
 <a href="/login">Login</a>
 <br>
 <a href="/signup">Signup</a>
+
+{% endif %}

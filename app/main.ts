@@ -11,6 +11,8 @@ async function main() {
   await authapp.initializeDatabase("auth");
   authapp.initializeSession();
   authapp.initializeTemplate();
+  authapp.initializeBodyParser();
+
 
   authapp.registerController('/', RootC);
 

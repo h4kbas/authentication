@@ -4,7 +4,7 @@ export default {
   },
   session: {
     secret: 'some secure stuff',
-    cookie: { secure: true }
+    cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 }
   },
   template: {
     allow_async: true, // Allow asynchronous compiling

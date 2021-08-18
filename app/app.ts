@@ -30,6 +30,11 @@ export default class App {
     this.app.set("twig options", config.template);
   }
 
+  public initializeBodyParser() {
+    // parse application/x-www-form-urlencoded
+    this.app.use(express.urlencoded()); //Parse URL-encoded bodies
+  }
+
   public listen(port: Number, callback: () => void) {
     this.app.listen(port, callback);
   }

@@ -1,4 +1,4 @@
-import IUser from "../schemas/user";
+import { IUser } from "../schemas/user";
 
 //Needed to extend session type
 declare module 'express-session' {

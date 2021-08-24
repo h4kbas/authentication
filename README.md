@@ -1,8 +1,19 @@
 ## Demo Auth Project
 
-GET /login: Login Page
-GET /signup: Register Page
-GET /logout: Logout 
+### Packages Needed to run this project
 
-POST /login: Login Action
-POST /signup: Register Action
+```
+Nodejs
+Typescript
+Docker
+Docker-Compose
+```
+
+
+### To run the project:
+
+```
+tsc # Compile the Typescript code into Javascript
+docker-compose build # Build the image 
+docker-compose up -d # Start the project as deamon
+```
